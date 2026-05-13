@@ -7,4 +7,8 @@ This calculator calculates frets for your instrument and represents the results 
 - **Tabular**: Copy and paste to your spreadsheet editor.
 - **Markdown**: Publish anywhere as nicely formatted table.
 
+Looks like this:
+
+![](screen.png)
+
 No AI labour was used.
