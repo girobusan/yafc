@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Yet Another Fret Calculator</title>
+  <link href="style.css" rel="stylesheet">
+  <script src="yafc.js" defer></script>
+</head>
+
+<body>
+
+  <main>
+    <h1>Fret Calc (Yet Another) 🪕</h1>
+
+    <p>
+      This calculator calculates frets for your instrument and
+      represents the results
+      in convenient formats:
+    </p>
+    <dl>
+      <dt>Text</dt>
+      <dd>Simple text to copy.</dd>
+      <dt>CSV</dt>
+      <dd>Standard portable format for tabular data, save it to the file
+        with <mark>.csv</mark> extension.</dd>
+      <dt>Tabular</dt>
+      <dd>Copy and paste to your spreadsheet editor.</dd>
+      <dt>Markdown</dt>
+      <dd>Publish anywhere as nicely formatted table.</dd>
+    </dl>
+    <form>
+
+      <fieldset>
+        <legend>Parameters</legend>
+
+        <label>Scale length<br> <input type="number" value="650" id="scale"></input></label>
+        <label>Number of frets<br><input type="number" value="20" id="frets"></input></label>
+
+        <label class="tooltip" data-tooltip="Use 17.817, if not sure.">Rule of... <br><select id="rule">
+            <option value="17.817" selected>17.817</option>
+            <option value="18">18</option>
+          </select></label>
+        <label>Round to... <br><input type="number" value="2" id="round"></input></label>
+        <br>
+        <label>
+          <input type="submit" value="Calculate" id="doaction"></input>
+        </label>
+
+      </fieldset>
+      <fieldset id="result_frame" data-show="text">
+
+        <legend>Result</legend>
+        <div class="tabs">
+          <button data-switch="text" class="one_tab selected">Text</button>
+          <button class="one_tab" data-switch="csv">CSV</button>
+          <button class="one_tab" data-switch="tbl">Tabular</button>
+          <button class="one_tab" data-switch="md">Markdown</button>
+        </div>
+        <pre id="result" class="result text">...</pre>
+        <pre id="result" class="result csv">,,,</pre>
+        <pre id="result" class="result tbl">...</pre>
+        <pre id="result" class="result md">...</pre>
+      </fieldset>
+    </form>
+  </main>
+
+</body>
+
+</html>

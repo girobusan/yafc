@@ -1,0 +1,131 @@
+body,
+html {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+main {
+  max-width: 50em;
+  margin: 0 auto;
+}
+
+label {
+  display: inline-block;
+  padding: 0.5em;
+}
+
+label input,
+label select {
+  margin-top: 0.25em;
+}
+
+label input[type="submit"] {
+  margin-top: 0;
+}
+
+fieldset {
+  border: 1px solid silver;
+  margin-bottom: 1em;
+}
+
+fieldset legend {
+  font-size: 0.75em;
+  color: gray;
+}
+
+form pre {
+  font-family: monospace;
+  font-size: 1.2em;
+  color: royalblue;
+}
+
+.tabs button {
+  border: none;
+  background: none;
+  font-size: 1em;
+  font-weight: bold;
+  color: #444;
+}
+
+.tabs button:hover {
+  color: royalblue;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+#result_frame pre {
+  display: none;
+}
+
+#result_frame[data-show="text"] pre.text,
+#result_frame[data-show="tbl"] pre.tbl,
+#result_frame[data-show="csv"] pre.csv,
+#result_frame[data-show="md"] pre.md {
+  display: block;
+}
+
+#result_frame[data-show="text"] button[data-switch="text"],
+#result_frame[data-show="csv"] button[data-switch="csv"],
+#result_frame[data-show="tbl"] button[data-switch="tbl"],
+#result_frame[data-show="md"] button[data-switch="md"] {
+  color: royalblue;
+  border-bottom: 2px solid royalblue;
+}
+
+dl {
+  column-count: 2;
+}
+
+dl dt {
+  font-weight: bold;
+}
+
+dl dd {
+  margin-left: 0;
+  margin-bottom: 0.5em;
+}
+
+.tooltip {
+  position: relative;
+}
+
+mark {
+  background-color: silver;
+}
+
+.tooltip::before {
+  content: attr(data-tooltip);
+  display: inline-block;
+  position: absolute;
+  bottom: 50%;
+  left: -50%;
+  background: #000;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.3s;
+  overflow: hidden;
+  max-width: 25em;
+  min-width: 10em;
+  pointer-events: none;
+  /* prevents tooltip from firing on pseudo hover */
+}
+
+.tooltip:hover::before {
+  opacity: 1;
+  bottom: 100%;
+}
