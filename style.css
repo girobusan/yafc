@@ -114,7 +114,7 @@ dl dd {
 }
 
 mark {
-  background-color: silver;
+  background-color: lightblue;
 }
 
 .tooltip::before {

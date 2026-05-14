@@ -1,5 +1,5 @@
 (() => {
-  var result = { text: null, csv: null, md: null };
+  var result = { text: null, csv: null, md: null, tbl: null };
   var elements = {};
 
   function getEl(q) {
@@ -18,7 +18,6 @@
     let pa = extract_params();
     let r = calc(pa);
     display_results(r, pa.round);
-    console.log(r);
     e.preventDefault();
     e.stopPropagation();
   });
@@ -56,7 +55,7 @@
       };
     });
     //
-    console.log(ful);
+    // console.log(ful);
     // text
     let text_str = "fret: length (step)\n\n";
     ful.forEach((f) => {
