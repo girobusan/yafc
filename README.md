@@ -1,4 +1,4 @@
-# Yet Another Fret Calculator
+# Yet Another Fret Calculator v1.0
 
 This calculator calculates frets for your instrument and represents the results in convenient formats.
 
@@ -11,4 +11,8 @@ Looks like this:
 
 ![](screen.png)
 
-No AI labour was used.
+### Planned features
+
+- [ ] Copy to clipboard button.
+- [ ] Save to file — csv, dsv, txt, md.
+- [ ] Generate nice printable page (image?).
