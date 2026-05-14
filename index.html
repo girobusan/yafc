@@ -1,82 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yet Another Fret Calculator — Portable Output Formats: Text, CSV, Tabular, Markdown</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    Yet Another Fret Calculator — Portable Output Formats: Text, CSV, Tabular,
+    Markdown
+  </title>
   <meta name="description"
-    content="Fret calculator for any string instrument. Get results in portable formats: plain text, CSV, tabular (copy-paste for spreadsheets), and Markdown. Works everywhere.">
+    content="Fret calculator for any string instrument. Get results in portable formats: plain text, CSV, tabular (copy-paste for spreadsheets), and Markdown. Works everywhere." />
   <meta name="keywords"
-    content="fret calculator, fret position calculator, guitar fret calculator, bass fret calculator, scale length, csv, markdown table, portable formats, tabular format, luthier tool, instrument calculator">
-  <meta name="author" content="girobusan">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Yet Another Fret Calculator">
+    content="fret calculator, fret position calculator, guitar fret calculator, bass fret calculator, scale length, csv, markdown table, portable formats, tabular format, luthier tool, instrument calculator" />
+  <meta name="author" content="girobusan" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Yet Another Fret Calculator" />
   <meta property="og:description"
-    content="Calculate fret positions instantly. Export to plain text, CSV, tabular (Excel/Google Sheets), or Markdown. Truly portable output for any workflow.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://girobusan.github.io/yafc">
-  <meta property="og:image" content="https://girobusan.github.io/yafc/screen.png">
-  <meta property="og:image:alt" content="Yet Another Fret Calculator — CSV and Markdown formats">
-  <meta property="og:site_name" content="Yet Another Fret Calculator">
-  <meta property="og:locale" content="en_US">
+    content="Calculate fret positions instantly. Export to plain text, CSV, tabular (Excel/Google Sheets), or Markdown. Truly portable output for any workflow." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://girobusan.github.io/yafc" />
+  <meta property="og:image" content="https://girobusan.github.io/yafc/screen.png" />
+  <meta property="og:image:alt" content="Yet Another Fret Calculator — CSV and Markdown formats" />
+  <meta property="og:site_name" content="Yet Another Fret Calculator" />
+  <meta property="og:locale" content="en_US" />
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Yet Another Fret Calculator — CSV, Markdown, Tabular...">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Yet Another Fret Calculator — CSV, Markdown, Tabular..." />
   <meta name="twitter:description"
-    content="Copy fret table for spreadsheets, save as .csv, or publish Markdown tables anywhere. Focus on portable formats.">
-  <meta name="twitter:image" content="https://girobusan.github.io/yafc/screen.png">
-  <link href="style.css" rel="stylesheet">
+    content="Copy fret table for spreadsheets, save as .csv, or publish Markdown tables anywhere. Focus on portable formats." />
+  <meta name="twitter:image" content="https://girobusan.github.io/yafc/screen.png" />
+  <link href="style.css" rel="stylesheet" />
   <script src="yafc.js" defer></script>
-
 </head>
 
 <body>
-
   <main>
-    <nav> by <a href="https://girobusan.github.io">girobusan</a> &middot; <a
-        href="https://github.com/girobusan/yafc">yafc github</a></nav>
-    <hr>
+    <nav>
+      by <a href="https://girobusan.github.io">girobusan</a> &middot;
+      <a href="https://github.com/girobusan/yafc">yafc github</a>
+    </nav>
+    <hr />
     <h1>Fret Calc (Yet Another) 🪕</h1>
 
     <p>
-      This calculator calculates frets for your instrument and
-      represents the results
-      in convenient formats:
+      This calculator calculates frets for your instrument and represents the
+      results in convenient formats:
     </p>
     <dl>
       <dt>Text</dt>
       <dd>Simple text to copy.</dd>
       <dt>CSV</dt>
-      <dd>Standard portable format for tabular data, save it to the file
-        with <mark>.csv</mark> extension.</dd>
+      <dd>
+        Standard portable format for tabular data, save it to the file with
+        <mark>.csv</mark> extension.
+      </dd>
       <dt>Tabular</dt>
       <dd>Copy and paste to your spreadsheet editor.</dd>
       <dt>Markdown</dt>
       <dd>Publish anywhere as nicely formatted table.</dd>
     </dl>
     <form>
-
       <fieldset>
         <legend>Parameters</legend>
 
         <label class="tooltip" data-tooltip="Use any measurment units, the calculation is unit-agnostic.">Scale
-          length<br> <input type="number" value="650" id="scale"></input></label>
-        <label>Number of frets<br><input type="number" value="20" id="frets"></input></label>
+          length<br />
+          <input type="number" value="650" id="scale" /></label>
+        <label>Number of frets<br /><input type="number" value="20" id="frets" min="1" max="64" /></label>
 
-        <label class="tooltip" data-tooltip="Use 17.817, if not sure.">Rule of... <br><select id="rule">
+        <label class="tooltip" data-tooltip="Use 17.817, if not sure.">Rule of... <br /><select id="rule">
             <option value="17.817" selected>17.817</option>
             <option value="18">18</option>
           </select></label>
-        <label>Round to... <br><input type="number" value="2" id="round"></input></label>
-        <br>
+        <label>Round to... <br /><input type="number" value="2" id="round" /></label>
+        <br />
         <label>
-          <input type="submit" value="Calculate" id="doaction"></input>
+          <input type="submit" value="Calculate" id="doaction" />
         </label>
-
       </fieldset>
       <fieldset id="result_frame" data-show="text">
-
         <legend>Result</legend>
         <div class="tabs">
           <button data-switch="text" class="one_tab selected">Text</button>
@@ -91,7 +93,6 @@
       </fieldset>
     </form>
   </main>
-
 </body>
 
 </html>
